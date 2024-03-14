@@ -1,0 +1,20 @@
+<app-navbar (showCreateComponent)="toggleCreateComponent($event)"></app-navbar>
+
+<main class="flex justify-center items-center h-svh">
+
+  <ng-template [ngIf]="showCreateComponent">
+    <app-create-post (showCreateComponent)="toggleCreateComponent($event)"></app-create-post>
+  </ng-template>
+  
+  <ng-template [ngIf]="showPostComponent">
+    <app-show-post [post]="post" (closePost)="onClosePost($event)"></app-show-post>
+  </ng-template>
+  
+  <ng-template #list [ngIf]="showListComponent">
+    <app-posts-list class="self-start" (postToShow)="postToShow($event)" (showPostComponent)="togglePostComponent($event)"></app-posts-list>
+  </ng-template>
+  
+</main>
+
+
+

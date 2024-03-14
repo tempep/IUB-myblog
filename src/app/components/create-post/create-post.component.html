@@ -1,0 +1,85 @@
+<form class="relative" (submit)="onSubmit()" [formGroup]="registerPostForm">
+  <i
+    class="absolute top-0 right-0 px-2 py-1 bg-red-500 text-white mx-2 mt-2 rounded-md shadow-md hover:scale-105 cursor-pointer"
+    (click)="toggleCreateComponent()"
+    >&times;</i
+  >
+
+  <span
+    class="absolute top-0 right-10 mt-2 text-white bg-green-600 py-1 px-2 shadow-md rounded-md"
+    *ngIf="showMessage"
+  >
+    Post created!
+  </span>
+
+  <div
+    class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl"
+  >
+    <div class="md:flex">
+      <div class="md:flex-shrink-0">
+        <img
+          class="h-48 w-full object-cover md:w-48"
+          src="https://via.placeholder.com/150"
+          alt="Imagen del blog"
+        />
+      </div>
+      <div class="p-8">
+        <div
+          class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"
+        >
+          Card Title
+        </div>
+        <input
+          type="text"
+          class="mt-1 p-2 mb-4 block w-full border-none bg-gray-100 rounded-lg focus:ring-0 focus:border-gray-200"
+          placeholder="Title"
+          formControlName="title"
+        />
+        <div class="mt-2 text-gray-500">Description</div>
+        <input
+          type="text"
+          class="mt-1 p-2 mb-4 block w-full border-none bg-gray-100 rounded-lg focus:ring-0 focus:border-gray-200"
+          placeholder="Description"
+          formControlName="description"
+        />
+        <div class="flex items-center mt-2 text-gray-500">
+          <div class="mr-4">First Name</div>
+          <input
+            type="text"
+            class="w-full p-2 border-none bg-gray-100 rounded-lg focus:ring-0 focus:border-gray-200"
+            placeholder="First Name"
+            formControlName="firstName"
+          />
+        </div>
+        <div class="flex items-center mt-2 text-gray-500">
+          <div class="mr-4">Last Name</div>
+          <input
+            type="text"
+            class="w-full p-2 border-none bg-gray-100 rounded-lg focus:ring-0 focus:border-gray-200"
+            placeholder="Last Name"
+            formControlName="lastName"
+          />
+        </div>
+        <div class="flex items-center mt-2 text-gray-500">
+          <div class="mr-10">Date</div>
+          <input
+            type="date"
+            class="w-full p-2 border-none bg-gray-100 rounded-lg focus:ring-0 focus:border-gray-200"
+            placeholder="Last Name"
+            formControlName="publishDate"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center items-center gap-5 w-full my-5">
+      <button
+        type="submit"
+        [disabled]="registerPostForm.invalid"
+        [ngClass]="{ 'opacity-50 cursor-default': registerPostForm.invalid }"
+        class="cursor-pointer px-4 py-2 bg-indigo-600 hover:scale-110 rounded-md shadow-md transition-all text-white"
+      >
+        Create
+      </button>
+    </div>
+  </div>
+</form>

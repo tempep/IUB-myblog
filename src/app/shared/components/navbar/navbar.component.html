@@ -1,22 +1,36 @@
-<!-- component -->
-<nav
-  class="relative select-none bg-blue-900 lg:flex lg:items-stretch w-full shadow-lg"
->
-  <div class="flex flex-no-shrink items-stretch h-12">
-    <a
-      href="#"
-      class="relative py-2 px-4 text-white no-underline text-2xl font-medium tracking-wide"
-      >IUB</a
-    >
-  </div>
-  <div class="lg:flex lg:items-stretch lg:flex-no-shrink lg:flex-grow">
-    <div class="lg:flex lg:items-stretch lg:justify-end ml-[94%]">
-      <button
-        class="relative py-2 px-2 m-1 font-medium text-white bg-blue-500 rounded-md shadow-md"
-        (click)="toggleCreateComponent()"
-      >
-        New post
-      </button>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
     </div>
-  </div>
 </nav>
